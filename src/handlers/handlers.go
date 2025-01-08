@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -23,6 +24,8 @@ var albums = []album{
 
 // getAlbums responds with the list of all albums as JSON.
 func GetAlbums(c *gin.Context) {
+	fmt.Println("GetAlbums called")
+
 	c.IndentedJSON(http.StatusOK, albums)
 }
 
